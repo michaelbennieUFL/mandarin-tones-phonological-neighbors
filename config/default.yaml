@@ -1,0 +1,58 @@
+datasets:
+  moe: data/dictionaries/dict_concised_2014_20260929.xlsx
+  cwn: data/dictionaries/cwn-graph-v.2022.04.22.pyobj
+  audio_index: data/dictionaries/dict_concised_www_2014_20260929.xlsx
+  audio_dir: data/dictionaries/dict_concised_www_2014_20260929/www_wav
+  moe_version: '2014_20260929'
+  cwn_version: 'v.2022.04.22'
+processed: data/processed/lexicon.json
+output_dir: output
+phonology:
+  initial_presets:
+    sonorants: [m, n, l]
+    voiceless_fricatives: [f, s, sh, x, h]
+    affricates: [z, c, zh, ch, j, q]
+    stops: [b, p, d, t, g, k]
+    aspirated_stops: [p, t, k]
+    unaspirated_stops: [b, d, g]
+    bilabial_initials: [b, p, m]
+    velar_initials: [g, k, h]
+    labiodental_initials: [f]
+    aspirated_affricates: [c, ch, q]
+    unaspirated_affricates: [z, zh, j]
+    nasal_initials: [m, n]
+    retroflex_initials: [zh, ch, sh, r]
+    alveolar_initials: [z, c, s]
+    alveolopalatal_initials: [j, q, x]
+    zero_initial: ['']
+  final_presets:
+    nasal_coda: {coda: [n, ng]}
+    alveolar_nasal_coda: {coda: [n]}
+    velar_nasal_coda: {coda: [ng]}
+    non_nasal: {coda: ['']}
+    monophthong: {nucleus: [a, o, e, i, u, ü]}
+    diphthong: {nucleus: [ai, ei, ao, ou]}
+    high_vowels: {nucleus: [i, u, ü]}
+    apical: {nucleus: [apical]}
+    rhotic: {nucleus: [er]}
+    i_medial: {medial: [i]}
+    u_medial: {medial: [u]}
+    ü_medial: {medial: [ü]}
+    no_medial: {medial: ['']}
+    open_a_nucleus: {nucleus: [a]}
+    e_nucleus: {nucleus: [e, ê]}
+filters:
+  initials: []
+  finals: []
+  initial_presets: []
+  final_presets: []
+  tones: [1, 2, 3, 4]
+  pos: []
+  pos_granularity: broad
+  require_cwn_sense: true
+minimal_sets:
+  require_all_four_tones: true
+audio:
+  enabled: false
+export:
+  formats: [csv, json, xlsx]

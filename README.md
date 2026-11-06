@@ -74,3 +74,15 @@ uv run twlex search --initial-preset aspirated_stops --final-preset nasal_coda -
 uv run twlex search --initials q,x --finals i,ian,ü --tones 1,4
 uv run twlex search --initial-preset zero_initial --final-preset i_medial
 ```
+
+## Interactive prompts and output
+
+Run `uv run twlex tui` to use the interactive workflow. It asks for custom initials and finals, initial and final presets, tones, and POS; enter comma-separated values or leave a field empty for no restriction. The tone prompt defaults to 1–4. It then reports the number of matching pronunciation/sense records and complete four-tone sets.
+
+- **Export results** writes the candidates and complete sets in the configured formats, plus a simplified TSV. Answering no leaves the previous exports in place.
+- **Check audio availability** checks the `www` index and files for the selected candidates and reports the number found. It does not copy recordings. If requested, it writes an audio manifest.
+- For recording copies, use `twlex audio extract`; `twlex audio manifest` only creates the index. Both keep original recordings intact.
+
+`output/minimal_sets/simplified.tsv` has one row per initial, normalized final, and POS tuple. Columns `t1`, `t2`, `t3`, and `t4` list distinct matching characters separated by commas; an empty cell means that tone has no candidates. Detailed exports preserve individual senses, readings, and review flags. The TSV is a summary and is not an input to the audio commands.
+
+Each export replaces its own previous CSV, JSON, and Excel files, including formats since disabled in the configuration; the simplified TSV is replaced on each set export. Audio manifest and extraction runs also remove recordings copied by the previous recorded audio extraction. Other files in the output directory are left alone. Save results elsewhere before rerunning if you need to retain them.
