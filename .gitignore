@@ -16,3 +16,10 @@ dist/
 # Generated results
 output/*
 !output/.gitkeep
+
+# Third-party datasets and generated lexicon
+data/dictionaries/
+data/dictionaries_raw/
+data/processed/
+data/raw/
+data/output/
