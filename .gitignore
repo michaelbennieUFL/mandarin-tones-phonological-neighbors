@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor settings
+.idea/
+.vscode/
+
+# Generated results
+output/*
+!output/.gitkeep
